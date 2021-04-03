@@ -1,16 +1,4 @@
----
-page_type: sample
-languages:
-- csharp
-products:
-- azure-active-directory
-- azure-active-directory-b2c
-- dotnet
-- dotnet-core
-- ms-graph
-description: ".NET Core console application using Microsoft Graph for Azure AD B2C user account management."
-urlFragment: "manage-b2c-users-dotnet-core-ms-graph"
----
+Jitendra: B2C integrates with Graph SDK code. 
 
 # Azure AD B2C user account management with .NET Core and Microsoft Graph
 
@@ -89,25 +77,13 @@ Command  Description
 [exit]   Exit the program
 -------------------------
 Enter command, then press ENTER: 2
-Enter user object ID: 064deeb8-0000-0000-0000-bf4084c9325b
-Looking for user with object ID '064deeb8-0000-0000-0000-bf4084c9325b'...
-{"displayName":"Autumn Hutchinson","identities":[{"signInType":"emailAddress","issuer":"contosob2c.onmicrosoft.com","issuerAssignedId":"autumn@fabrikam.com","@odata.type":"microsoft.graph.objectIdentity"},{"signInType":"userPrincipalName","issuer":"contosob2c.onmicrosoft.com","issuerAssignedId":"064deeb8-0000-0000-0000-bf4084c9325b@contosob2c.onmicrosoft.com","@odata.type":"microsoft.graph.objectIdentity"}],"id":"064deeb8-0000-0000-0000-bf4084c9325b","@odata.type":"microsoft.graph.user","@odata.context":"https://graph.microsoft.com/beta/$metadata#users(displayName,id,identities)/$entity","responseHeaders":{"Date":["Fri, 14 Feb 2020 18:52:56 GMT"],"Cache-Control":["no-cache"],"Transfer-Encoding":["chunked"],"Strict-Transport-Security":["max-age=31536000"],"request-id":["23165c3f-0000-0000-0000-f7fc59669c24"],"client-request-id":["23165c3f-0000-0000-0000-f7fc59669c24"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"WEST US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"MW1PEPF00001671\"}}"],"OData-Version":["4.0"]},"statusCode":"OK"}
-Enter command, then press ENTER: exit
-azureuser@machine:~/ms-identity-dotnetcore-b2c-account-management/src$
+
 ```
 
 ## Key concepts
 
 The application uses the [OAuth 2.0 client credentials grant](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow) flow to get an access token for calling the Microsoft Graph API. In the client credentials grant flow, the application non-interactively authenticates as itself, as opposed to requiring a user to sign in interactively.
 
-The following libraries are used in this sample:
-
-| Library documentation | NuGet | API reference | Source code |
-| ------- | ------------- | ------------- | ------ |
-| [Microsoft Authentication Library for .NET (MSAL.NET)][msal-doc] | [Microsoft.Identity.Client][msal-pkg] | [Reference][msal-ref] | [GitHub][msal-src] |
-| [Microsoft Graph Client Library for .NET][graph-doc] | [Microsoft.Graph.Auth][graph-auth-pkg] | [Reference][graph-auth-ref] | [GitHub][graph-auth-src] |
-| [Microsoft Graph Client Beta Library for .NET][graph-doc] | [Microsoft.Graph.Beta][graph-beta-pkg] | [Reference][graph-auth-ref] | [GitHub][graph-beta-src] |
-| [.NET Extensions][config-doc] | [Microsoft.Extensions.Configuration][config-pkg] | [Reference][config-ref] | [GitHub][config-src] |
 
 The Microsoft Graph Client Library for .NET is a wrapper for MSAL.NET, providing helper classes for authenticating with and calling the Microsoft Graph API.
 
@@ -163,34 +139,3 @@ public static async Task ListUsers(AppSettings config, GraphServiceClient graphC
     }
 }
 ```
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-<!-- LINKS -->
-[msal-doc]: https://docs.microsoft.com/azure/active-directory/develop/msal-overview
-[msal-pkg]: https://www.nuget.org/packages/Microsoft.Identity.Client/
-[msal-ref]: https://docs.microsoft.com/dotnet/api/microsoft.identity.client?view=azure-dotnet
-[msal-src]: https://github.com/AzureAD/microsoft-authentication-library-for-dotnet
-
-[config-doc]: https://docs.microsoft.com/aspnet/core/fundamentals/configuration
-[config-pkg]: https://www.nuget.org/packages/Microsoft.Extensions.Configuration/
-[config-ref]: https://docs.microsoft.com/dotnet/api/microsoft.extensions.configuration
-[config-src]: https://github.com/dotnet/extensions
-
-[graph-doc]: https://docs.microsoft.com/graph/
-[graph-auth-pkg]: https://www.nuget.org/packages/Microsoft.Graph.Auth/
-[graph-beta-pkg]: https://www.nuget.org/packages/Microsoft.Graph.Beta/
-[graph-auth-ref]: https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/overview.md
-<!--[graph-beta-ref]: USES graph-auth-ref -->
-[graph-auth-src]: https://github.com/microsoftgraph/msgraph-sdk-dotnet
-[graph-beta-src]: https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet
-
-[ConfidentialClientApplication]: https://docs.microsoft.com/dotnet/api/microsoft.identity.client.iconfidentialclientapplication
-[ClientCredentialProvider]: https://github.com/microsoftgraph/msgraph-sdk-dotnet-auth#b-client-credential-provider
-[GraphServiceClient]: https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/overview.md#graphserviceclient
