@@ -1,5 +1,7 @@
 Jitendra: B2C integrates with Graph SDK code. 
 
+![image](https://user-images.githubusercontent.com/4159689/113484097-35ad9000-94c4-11eb-9a17-6cd5bcb08809.png)
+
 # Azure AD B2C user account management with .NET Core and Microsoft Graph
 
 This .NET Core console application demonstrates the use of the Microsoft Graph API to perform user account management operations (create, read, update, delete) within an Azure AD B2C directory. Also shown is a technique for the bulk import of users from a JSON file. Bulk import is useful in migration scenarios like moving your users from a legacy identity provider to Azure AD B2C.
